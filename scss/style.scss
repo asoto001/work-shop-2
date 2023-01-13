@@ -1,0 +1,363 @@
+@use 'variables';
+@use 'mixins';
+@use 'inicials';
+
+.navbar-container{
+    @include mixins.img('./images/desktop/image-hero.jpg', 100vw,700px, cover);
+    display: flex;
+
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: variables.$white;
+    @media (max-width: 600px) {
+        @include mixins.img('./images/mobile/image-hero.jpg ', 100%,800px, contain);
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+   
+    
+    & ul{
+        display: flex;
+        margin-top: 30px;
+        gap: 50px;
+        & a{
+            color: variables.$white;
+        }
+        @media (max-width: 600px) {
+            display: none;
+        }
+    
+    }
+    &__droopdown{
+       display: none;
+       @media (max-width: 600px) {
+        display: block;
+    }
+    }
+    &__btn{
+        height: 35px;
+        width: 35px;
+        border :none;
+        background-color: rgb(139, 1, 139);
+        display: none;
+       @media (max-width: 600px) {
+        display: block;
+    }
+        & figure{
+            position: relative;
+            top: 5px;
+            left: 5px;
+            @include mixins.img('./images/icon-hamburger.svg', 25px, 25px, contain)
+          
+        }
+    }
+    &__dropdown-div{
+        display: none;
+        position: absolute;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+        & a{
+            color: variables.$white;
+        }
+    }
+
+
+}
+
+.header-container{
+    z-index: 1;
+    position: relative;
+    bottom: 450px;
+    left: 242px;
+    border: 3px variables.$white solid;
+    width: 620px;
+    height: 300px;
+    color: variables.$white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & h2{
+        font-size:70px ;
+        @media(max-width: 600px){
+            font-size:40px ;
+        }
+    }
+    @media(max-width: 600px){
+        width: 320px;
+        left: 30px;
+    }
+}
+
+.description-container{
+    display: flex;
+    padding-left: 100px;
+    @media(max-width: 600px){
+        padding-left: 15px;
+        flex-direction: column;
+    }
+    & figure{
+        @include mixins.img('./images/desktop/image-interactive.jpg ', 100%,500px, contain);
+        @media(max-width: 600px){
+            
+        }
+    }
+    & div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        z-index: 1;
+        padding-top: 50px;
+        gap: 20px;
+        background-color: variables.$white;
+        width: 920px;
+        height: 355px;
+        margin-top: 250px;
+        position: relative;
+        right: 180px;
+        @media(max-width: 600px){
+            right: 8px;
+            margin-top: -180px;
+            width: 320px;
+            height: 355px;
+        }
+        & h2{
+            font-size: 40px;
+            width: 345px;
+        }
+        & p{
+            color: variables.$darkGrey;
+        }
+    }
+}
+
+.cards-container{
+    padding-left: 100px ;
+    padding-right: 100px ;
+    @media (max-width:600px){
+        padding-left: 10px ;
+        padding-right: 10px ;
+    }
+    & h2{
+        margin-bottom: 30px;
+        font-size: 35px;
+    }
+
+    &__div-text{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    &__btn{
+        @include mixins.button(115px, 30px, 15px, 0em, variables.$white, variables.$black, 3px);
+        font-weight: 600;
+        @media(max-width: 600px){
+            display: none;
+        }
+    }
+    &__div-cards{
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        color: variables.$white;
+        row-gap: 35px;
+        @media(max-width: 600px){
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__fig-deep{
+       @include mixins.img('./images/desktop/image-deep-earth.jpg ', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-deep-earth.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+
+    }
+    &__fig-arcade{
+        @include mixins.img('./images/desktop/image-night-arcade.jpg', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-night-arcade.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+    &__fig-soccer{
+        @include mixins.img('./images/desktop/image-soccer-team.jpg', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-soccer-team.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+    &__fig-grid{
+        @include mixins.img('./images/desktop/image-grid.jpg', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-grid.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+    &__fig-above{
+        @include mixins.img('./images/desktop/image-from-above.jpg', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-from-above.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+    &__fig-boreals{
+        @include mixins.img('./images/desktop/image-pocket-borealis.jpg', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-pocket-borealis.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+    &__fig-the{
+        @include mixins.img('./images/desktop/image-curiosity.jpg', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-curiosity.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+    &__fig-make{
+        @include mixins.img('./images/desktop/image-fisheye.jpg', 250px, 300px, cover);
+       display: flex;
+       flex-direction: column-reverse;
+       padding: 25px;
+     & p{
+            font-size: 25px;
+        }
+        @media(max-width: 600px){
+            @include mixins.img('./images/mobile/image-fisheye.jpg', 340px, 130px, cover);
+            padding: 5px;
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+
+    &__btn-media{
+        display: none;
+        @media(max-width: 600px){
+            display: block;
+            @include mixins.button(130px, 40px, 15px, 0em, variables.$white, variables.$black, 3px);
+            font-weight: 600;
+            border: 1px black solid ;
+            margin-left: 100px
+        }
+    }
+}
+
+.footer-container{
+    color: variables.$white;
+    background-color: variables.$black;
+    margin-top: 150px;
+    padding: 50px 85px;
+    @media(max-width:500px){
+        padding: 50px 10px 15px 10px;
+    }
+    
+    &__div-1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media(max-width:500px){
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+    }
+    &__div-2{
+        display: flex;
+        gap: 15px;
+        @media(max-width:500px){
+            margin-bottom: 30px;
+        }
+    }
+    &__div-list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        @media(max-width:500px){
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        & ul{
+            display: flex;
+            gap: 20px;
+            @media(max-width:500px){
+                display: flex;
+                flex-direction: column;
+            }
+            & a{
+                color: variables.$white;
+            }
+        }
+    }
+}
